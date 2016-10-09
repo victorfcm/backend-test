@@ -18,8 +18,8 @@ Caso tenha interesse em saber como e porque fiz a API dessa forma, por favor, ac
 ### Utilização
 As requisições podem ser feitas para o arquivo index.php utilizando o método GET para passar os parametros *(Lembrando que nenhum parametro é obrigatório, e pode ser utilizado mais de um parametro por requisição)*:
 
-* **term** - Irá pesquisar determinado termo nos campos de título e descrição, com combinação parcial de string.
-* **city** - Pesquisará no campo cidade, com combinação parcial de string.
+* **term** - Irá pesquisar determinado termo nos campos de título e descrição, com combinação parcial de string e **SEM CASE SENSITIVE**.
+* **city** - Pesquisará no campo cidade, com combinação parcial de string e **SEM CASE SENSITIVE**.
 * **wage_min** - Define o valor mínimo do salário na pesquisa.
 * **wage_max** - Define o valor máximo de salário na pesquisa, para esse é necessário ter wage_min.
 * **order** - Atribui ordenação ascendente (ASC) ou decrescente (DSC) no campo de salário. 
@@ -42,8 +42,8 @@ O resultado será exibido no formato JSON, contendo as seguintes informações:
 {"status":"success","code":200,"count":1,"result":[{"id":673,"title":"Coordenador\/Gerente de Tecnologia da Informa\u00e7\u00e3o","description":"<li> Garantir o cumprimento e procedimentos dos processos de TI. Definir,otimizar e manter atualizada as rotinas, politicas, procedimentos e documenta\u00e7\u00e3o t\u00e9cnica da \u00e1rea. Acompanhar os processos dos servi\u00e7os terceirizados, planos de conting\u00eancia e desempenho da \u00e1rea.<\/li><li> Experi\u00eancia com Infraestrutura, Telecom e Sistemas (ERP). <\/li>","wage":7000,"cities":["Porto Alegre"]}]}
 ```
 
-2) Todas as vagas de Coordenador em Itajaí com salários acima de R$ 6.500, com erro de digitação no nome da cidade *(pesquisando por "tajai")*.
-> /index.php?city=tajai&wage_min=6500&term=Coordenador
+2) Todas as vagas de Coordenador em Itajaí com salários acima de R$ 5.500, com erro de digitação no nome da cidade *(pesquisando por "tajai")*.
+> /index.php?city=tajai&wage_min=5500&term=Coordenador
 ```
 {"status":"success","code":200,"count":2,"result":[{"id":316,"title":"Coordenador de Desenvolvimento e Treinamentos","description":"<li> Desenvolvimento e aplica\u00e7\u00e3o de Avalia\u00e7\u00e3o desempenho. Atua\u00e7\u00e3o com desenvolvimento e implementa\u00e7\u00e3o da pesquisa de clima organizacional. Respons\u00e1vel pela implanta\u00e7\u00e3o da Matriz 9 box com calibragem de n\u00edveis. Desenvolvimento plano de sucess\u00e3o. Desenvolvimento a\u00e7\u00f5es para n\u00edveis alta dire\u00e7\u00e3o. Gest\u00e3o do planejamento estrat\u00e9gico de DHO. Monitoramento de indicadores e coordena\u00e7\u00e3o de equipe.<\/li><li> Forma\u00e7\u00e3o Superior em Administra\u00e7\u00e3o, Psicologia ou afins. Preferencialmente com experi\u00eancia em ind\u00fastria. Ter atuado com treinamento e desenvolvimento. Conhecimentos em matriz 9 box com calibragem de n\u00edveis e planos de sucess\u00e3o.<\/li>","wage":11000,"cities":["Itajai"]},{"id":470,"title":"Coordenador Administrativo \/ Operacional","description":"<li> Coordenar rotinas administrativas, assegurando o cumprimento das normas e procedimentos estabelecidos, realizar o controle e compra de suprimentos e servi\u00e7os (contratos de fornecedores). Acompanhar o RH (admiss\u00f5es e rescis\u00f5es), elaborar relat\u00f3rios diversos de acompanhamento financeiro, coordenar \u00e1rea de manuten\u00e7\u00f5es e suprimentos, coordenar rotinas de RH (controle de frequ\u00eancia, hor\u00e1rios e atividades dos colaboradores).<\/li><li> Experi\u00eancia com supervis\u00e3o de equipe administrativa e operacional.<\/li><li> Ensino Superior completo em Administra\u00e7\u00e3o de empresas ou Administra\u00e7\u00e3o P\u00fablica.<\/li>","wage":5500,"cities":["Itajai"]}]}
 ```
@@ -52,6 +52,7 @@ O resultado será exibido no formato JSON, contendo as seguintes informações:
 > /index.php?term=Analista&order=DSC
 ```
 ```
+
 ---
 
 ## Código da API

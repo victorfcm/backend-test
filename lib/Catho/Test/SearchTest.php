@@ -46,7 +46,7 @@ class SearchTest extends PHPUnit
         $search = new Search($jobCollection);
         $search->term('Analista');
 
-        $this->assertEquals(72, $search->getResult()->count());
+        $this->assertEquals(79, $search->getResult()->count());
     }
 
     /**

@@ -133,7 +133,7 @@ class Search
                 if(is_string($job->$field))
                 {
                     // IF YES, TRY TO FIND THE $stringToSearch ON THE FIELD
-                    if(strpos($job->$field, $stringToSearch) !== false)
+                    if(strpos(strtolower($job->$field), strtolower($stringToSearch)) !== false)
                     {
                         // THEN, ADD IT TO THE RESULT AND CONTINUE THE PROCESS
                         $result->add($job);
@@ -146,7 +146,7 @@ class Search
                     // IF TRUE, ITERATE INSIDE THE FIELDS TO FIND THE $stringToSearch IN SOME ELEMENT
                     foreach($job->$field as $subField)
                     {
-                        if(strpos($subField, $stringToSearch) !== false)
+                        if(strpos(strtolower($subField), strtolower($stringToSearch)) !== false)
                         {
                             // THEN ADD IT TO THE RESULT AND CONTINUE THE PROCESS
                             $result->add($job);
