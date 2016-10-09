@@ -8,6 +8,13 @@
 
 namespace Catho\Exception;
 
+/**
+ * Class FileException
+ * The exception classes are useful to handle the errors, but because
+ * of the lack of time, I will not do it. So there are some default Exceptions Class.
+ *
+ * @package Catho\Exception
+ */
 class FileException extends \Exception
 {
 
@@ -21,7 +28,7 @@ class FileException extends \Exception
      */
     public function __construct($message, $code, \Exception $previous = null)
     {
-        echo json_encode(['status' => 'error', 'message' => $message, 'code' => $code]);
+        echo json_encode(['status' => 'error', 'exceptionType' => 'FileException', 'message' => $message, 'code' => $code]);
         exit;
     }
 }

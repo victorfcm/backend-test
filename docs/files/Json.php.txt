@@ -1,0 +1,58 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Victor Martins
+ * Date: 08/10/16
+ * Time: 17:26
+ */
+
+namespace Catho;
+
+use Catho\Exception\FileException;
+use phpDocumentor\Reflection\File;
+
+/**
+ * Class Json
+ * @package Catho
+ */
+class Json
+{
+    /**
+     * Path to the JSON file
+     * @type string
+     */
+    private $pathToJson;
+
+    /**
+     * The object after the json_decode
+     * @type object
+     */
+    public $jsonObject;
+
+    /**
+     * Json constructor.
+     *
+     * @param $path
+     * @throws FileException
+     */
+    public function __construct($path)
+    {
+        $this->pathToJson = $path;
+
+        // Verify the integrity of the path.
+        if(!file_exists($this->pathToJson))
+            throw new FileException('The JSON path was not found', 404);
+
+        // Check the permission of the file.
+        if(!is_readable($this->pathToJson))
+            throw new FileException('The JSON file is not readable', 403);
+
+        // Decode the JSON file into a object
+        $this->jsonObject = json_decode(file_get_contents($this->pathToJson));
+
+        // Check the integrity of the object
+        if(!$this->jsonObject)
+            throw new FileException('The JSON file is invalid', 500);
+
+    }
+}

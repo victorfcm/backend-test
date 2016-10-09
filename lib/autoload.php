@@ -6,6 +6,7 @@
  * Time: 17:53
  */
 
+// SIMPLE AUTOLOAD
 spl_autoload_register(
 
     function( $classname ) {

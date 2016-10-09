@@ -15,11 +15,22 @@ use Catho\Json;
 use Catho\JobCollection;
 use PHPUnit_Framework_TestCase as PHPUnit;
 
+/**
+ * Class JobTest
+ * @package Catho\Test
+ */
 class JobTest extends PHPUnit
 {
+    /**
+     * Json object
+     * @type \Catho\Json
+     */
     private $json;
 
-    public function testType()
+    /**
+     * Test if all the JSON file was loaded
+     */
+    public function testLastId()
     {
         $this->json = new Json('vagas.json');
         $jobObject = new JobCollection($this->json);
@@ -27,6 +38,9 @@ class JobTest extends PHPUnit
         $this->assertNotEmpty($jobObject->getById(1200));
     }
 
+    /**
+     * Test if the first id is there
+     */
     public function testId()
     {
         $this->json = new Json('vagas.json');
@@ -35,6 +49,9 @@ class JobTest extends PHPUnit
         $this->assertEquals(1, $jobObject->getById(1)->id);
     }
 
+    /**
+     * Test the title of the first entry.
+     */
     public function testTitle()
     {
         $this->json = new Json('vagas.json');
@@ -43,6 +60,9 @@ class JobTest extends PHPUnit
         $this->assertEquals('Analista de Suporte de TI', $jobObject->getById(1)->title);
     }
 
+    /**
+     * Test the description of the first entry.
+     */
     public function testDescription()
     {
         $this->json = new Json('vagas.json');
@@ -51,6 +71,9 @@ class JobTest extends PHPUnit
         $this->assertEquals('<li> Prestar atendimento remoto e presencial a clientes. Atuar com suporte de TI.</li><li> Conhecimento aprofundado em Linux Server (IPTables, proxy, mail, samba) e Windows Server(MS-AD, WTS, compartilhamentos).</li>', $jobObject->getById(1)->description);
     }
 
+    /**
+     * Test the wage of the first entry
+     */
     public function testWage()
     {
         $this->json = new Json('vagas.json');
@@ -59,6 +82,9 @@ class JobTest extends PHPUnit
         $this->assertEquals(3200, $jobObject->getById(1)->wage);
     }
 
+    /**
+     * Test the cities of the first entry
+     */
     public function testCities()
     {
         $this->json = new Json('vagas.json');

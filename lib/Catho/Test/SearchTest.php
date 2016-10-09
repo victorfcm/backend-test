@@ -16,11 +16,15 @@ use Catho\Search;
 use PHPUnit_Framework_TestCase as PHPUnit;
 
 /**
- * Class JsonTest
+ * Class SearchTest
  * @package Catho\Test
  */
-class JsonTest extends PHPUnit
+class SearchTest extends PHPUnit
 {
+    /**
+     * Test the simple term search and see if the result it's empty.
+     * @throws \Catho\Exception\TypeException
+     */
     public function testTermResults()
     {
         $json = new Json('vagas.json');
@@ -28,9 +32,13 @@ class JsonTest extends PHPUnit
         $search = new Search($jobCollection);
         $search->term('Analista');
 
-        $this->assertNotEmpty($search->getResult());
+        $this->assertNotEmpty($search->getResult()->getCollection());
     }
 
+    /**
+     * Test the same test above count.
+     * @throws \Catho\Exception\TypeException
+     */
     public function testTermCount()
     {
         $json = new Json('vagas.json');
@@ -41,6 +49,10 @@ class JsonTest extends PHPUnit
         $this->assertEquals(72, $search->getResult()->count());
     }
 
+    /**
+     * Test the simple city search and see if the result it's empty.
+     * @throws \Catho\Exception\TypeException
+     */
     public function testCityResult()
     {
         $json = new Json('vagas.json');
@@ -48,9 +60,13 @@ class JsonTest extends PHPUnit
         $search = new Search($jobCollection);
         $search->city('Porto Alegre');
 
-        $this->assertNotEmpty($search->getResult());
+        $this->assertNotEmpty($search->getResult()->getCollection());
     }
 
+    /**
+     * Test the same test above count.
+     * @throws \Catho\Exception\TypeException
+     */
     public function testCityCount()
     {
         $json = new Json('vagas.json');
@@ -61,6 +77,11 @@ class JsonTest extends PHPUnit
         $this->assertEquals(356, $search->getResult()->count());
     }
 
+    /**
+     * Test the simple city search and see if the result it's empty.
+     * @throws \Catho\Exception\EmptyException
+     * @throws \Catho\Exception\TypeException
+     */
     public function testWageResult()
     {
         $json = new Json('vagas.json');
@@ -68,9 +89,14 @@ class JsonTest extends PHPUnit
         $search = new Search($jobCollection);
         $search->wage(10000);
 
-        $this->assertNotEmpty($search->getResult());
+        $this->assertNotEmpty($search->getResult()->getCollection());
     }
 
+    /**
+     * Test the same test above count.
+     * @throws \Catho\Exception\EmptyException
+     * @throws \Catho\Exception\TypeException
+     */
     public function testWageCount()
     {
         $json = new Json('vagas.json');
@@ -81,6 +107,11 @@ class JsonTest extends PHPUnit
         $this->assertEquals(2, $search->getResult()->count());
     }
 
+    /**
+     * Test a multiple search, including city and wage.
+     * @throws \Catho\Exception\EmptyException
+     * @throws \Catho\Exception\TypeException
+     */
     public function testMultipleSearchCount()
     {
         $json = new Json('vagas.json');
@@ -92,6 +123,11 @@ class JsonTest extends PHPUnit
         $this->assertEquals(3, $search->getResult()->count());
     }
 
+    /**
+     * Test a multiple search, including city, wage and terms
+     * @throws \Catho\Exception\EmptyException
+     * @throws \Catho\Exception\TypeException
+     */
     public function testMultipleSearchCountWithTerm()
     {
         $json = new Json('vagas.json');

@@ -9,6 +9,7 @@
 namespace Catho;
 
 use Catho\Exception\FileException;
+use phpDocumentor\Reflection\File;
 
 /**
  * Class Json
@@ -17,17 +18,22 @@ use Catho\Exception\FileException;
 class Json
 {
     /**
+     * Path to the JSON file
      * @type string
      */
     private $pathToJson;
 
     /**
+     * The object after the json_decode
      * @type object
      */
     public $jsonObject;
 
     /**
      * Json constructor.
+     *
+     * @param $path
+     * @throws FileException
      */
     public function __construct($path)
     {

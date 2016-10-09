@@ -20,6 +20,12 @@ class JobCollection
      */
     public $collection;
 
+    /**
+     * JobCollection constructor.
+     * This class takes the JSON and adapt it to the @Job class.
+     *
+     * @param \Catho\Json $json
+     */
     public function __construct(Json $json)
     {
         foreach($json->jsonObject->docs as $id => $job)
@@ -35,6 +41,12 @@ class JobCollection
         }
     }
 
+    /**
+     * Return the @Job of this $id
+     * @param $id
+     *
+     * @return \Catho\Job
+     */
     public function getById($id)
     {
         return $this->collection[$id];
