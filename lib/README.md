@@ -10,7 +10,7 @@ $ composer install
 PHP >= 5.5
 
 ### Processo decisório
-Caso tenha interesse em saber como e porque fiz a API dessa forma, por favor, acesse esse [arquivo](DECISION.md).
+Caso tenha interesse em saber como e porque fiz a API dessa forma, por favor, acesse o [arquivo DECISION.md](DECISION.md).
 
 ---
 
