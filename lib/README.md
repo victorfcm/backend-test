@@ -64,23 +64,25 @@ O resultado será exibido no formato JSON, contendo as seguintes informações:
 
 ## Código da API
 ### Hierarquia de arquivos:
-> |- Catho/
-> |---- Job.php
-> |---- JobCollection.php
-> |---- Json.php
-> |---- Request.php
-> |---- Result.php
-> |---- Search.php
-> |------ Test/
-> |---------- JobTest.php
-> |---------- JsonTest.php
-> |---------- RequestTest.php
-> |---------- SearchTest.php
-> |------ Exception/
-> |---------- EmptyException.php
-> |---------- RequestException.php
-> |---------- FileException.php
-> |---------- TypeException.php
+```
+|- Catho/
+|---- Job.php
+|---- JobCollection.php
+|---- Json.php
+|---- Request.php
+|---- Result.php
+|---- Search.php
+|------ Test/
+|---------- JobTest.php
+|---------- JsonTest.php
+|---------- RequestTest.php
+|---------- SearchTest.php
+|------ Exception/
+|---------- EmptyException.php
+|---------- RequestException.php
+|---------- FileException.php
+|---------- TypeException.php
+```
 
 ### Testes
 Esse projeto utiliza [PHPUnit] para testes, e podem ser executados da seguinte forma:
