@@ -48,9 +48,16 @@ O resultado será exibido no formato JSON, contendo as seguintes informações:
 {"status":"success","code":200,"count":2,"result":[{"id":316,"title":"Coordenador de Desenvolvimento e Treinamentos","description":"<li> Desenvolvimento e aplica\u00e7\u00e3o de Avalia\u00e7\u00e3o desempenho. Atua\u00e7\u00e3o com desenvolvimento e implementa\u00e7\u00e3o da pesquisa de clima organizacional. Respons\u00e1vel pela implanta\u00e7\u00e3o da Matriz 9 box com calibragem de n\u00edveis. Desenvolvimento plano de sucess\u00e3o. Desenvolvimento a\u00e7\u00f5es para n\u00edveis alta dire\u00e7\u00e3o. Gest\u00e3o do planejamento estrat\u00e9gico de DHO. Monitoramento de indicadores e coordena\u00e7\u00e3o de equipe.<\/li><li> Forma\u00e7\u00e3o Superior em Administra\u00e7\u00e3o, Psicologia ou afins. Preferencialmente com experi\u00eancia em ind\u00fastria. Ter atuado com treinamento e desenvolvimento. Conhecimentos em matriz 9 box com calibragem de n\u00edveis e planos de sucess\u00e3o.<\/li>","wage":11000,"cities":["Itajai"]},{"id":470,"title":"Coordenador Administrativo \/ Operacional","description":"<li> Coordenar rotinas administrativas, assegurando o cumprimento das normas e procedimentos estabelecidos, realizar o controle e compra de suprimentos e servi\u00e7os (contratos de fornecedores). Acompanhar o RH (admiss\u00f5es e rescis\u00f5es), elaborar relat\u00f3rios diversos de acompanhamento financeiro, coordenar \u00e1rea de manuten\u00e7\u00f5es e suprimentos, coordenar rotinas de RH (controle de frequ\u00eancia, hor\u00e1rios e atividades dos colaboradores).<\/li><li> Experi\u00eancia com supervis\u00e3o de equipe administrativa e operacional.<\/li><li> Ensino Superior completo em Administra\u00e7\u00e3o de empresas ou Administra\u00e7\u00e3o P\u00fablica.<\/li>","wage":5500,"cities":["Itajai"]}]}
 ```
 
-3) Todos as vagas de Analista com salários acima de R$ 7.000 ordenados de forma decrescente
-> /index.php?term=Analista&order=DSC
+3) Todos as vagas de Analista com salários entre R$ 5.000 e R$ 7.500 ordenados de forma decrescente
+> /index.php?term=Analista&order=DSC&wage_min=5000&wage_max=7500
 ```
+{"status":"success","code":200,"count":1,"result":[{"id":581,"title":"Analista de Tecnologia da Informa\u00e7\u00e3o","description":"<li> Planejar, or\u00e7ar, implementar e conduzir as atualiza\u00e7\u00f5es de hardware e software. Coordenar o sistema de virtualiza\u00e7\u00e3o e de conting\u00eancia. Exercer o controle de seguran\u00e7a de acessos e sistemas informatizados. Conduzir o relacionamento com os fornecedores de software e hardware. Definir, organizar e dimensionar requisitos e funcionalidades que envolvem os processos de T.I. Elaborar documenta\u00e7\u00e3o t\u00e9cnica e manter atualizados os processos de T.I. Gerenciar o cloud computer.<\/li><li> Dom\u00ednio no sistema operacional da institui\u00e7\u00e3o (ser\u00e1 fornecido treinamento), ferramentas de gerenciamento de rede, ferramenta de gerenciamento e seguran\u00e7a de TI, manuten\u00e7\u00e3o de computadores, SQL e processos de gest\u00e3o. Necess\u00e1rio excel\u00eancia em relacionamento interpessoal, organiza\u00e7\u00e3o, capacidade de comunica\u00e7\u00e3o, solu\u00e7\u00e3o de problemas, vis\u00e3o sist\u00eamica e \u00e9tica. Gradua\u00e7\u00e3o conclu\u00edda.<\/li>","wage":5600,"cities":["Porto Alegre"]}]}
+```
+
+3) Vagas no Rio de Janeiro
+> /index.php?city=rio%20de%20janeiro
+```
+{"status":"error","exceptionType":"EmptyException","message":"No result was found","code":404}
 ```
 
 ---

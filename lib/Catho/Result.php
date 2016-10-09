@@ -84,10 +84,10 @@ class Result
      */
     private function sortAsc($a, $b)
     {
-        if($a === $b)
+        if($a->wage === $b->wage)
             return 0;
 
-        return($a > $b)?+1:-1;
+        return($a->wage > $b->wage)?+1:-1;
     }
 
     /**
@@ -99,9 +99,9 @@ class Result
      */
     private function sortDsc($a, $b)
     {
-        if($a === $b)
+        if($a->wage === $b->wage)
             return 0;
 
-        return($a < $b)?+1:-1;
+        return($a->wage < $b->wage)?+1:-1;
     }
 }
