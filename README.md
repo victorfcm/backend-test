@@ -12,6 +12,9 @@ PHP >= 5.5
 ### FAQ
 Caso tenha interesse em saber como e porque fiz a API dessa forma, por favor, acesse o [arquivo FAQ.md](FAQ.md), lá tem informações interessantes sobre como eu trabalho.
 
+### Trello
+Criei um [board no Trello, que pode ser acessado publicamente](https://trello.com/b/igBqFg0Y) para gerenciar melhor meu tempo e as features que eu botaria no projeto, deixei ele de acesso público caso vocês tenham interesse em ver.
+
 ---
 
 ## Consumo da API
