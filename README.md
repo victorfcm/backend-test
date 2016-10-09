@@ -9,8 +9,8 @@ $ composer install
 ### Tecnologias Utilizadas
 PHP >= 5.5
 
-### Processo decisório
-Caso tenha interesse em saber como e porque fiz a API dessa forma, por favor, acesse o [arquivo DECISION.md](DECISION.md).
+### FAQ
+Caso tenha interesse em saber como e porque fiz a API dessa forma, por favor, acesse o [arquivo FAQ.md](FAQ.md), lá tem informações interessantes sobre como eu trabalho.
 
 ---
 
