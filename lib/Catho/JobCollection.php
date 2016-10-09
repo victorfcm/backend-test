@@ -16,7 +16,7 @@ class JobCollection
 {
     /**
      * The list of the jobs
-     * @type int
+     * @type array Catho\Job
      */
     public $collection;
 

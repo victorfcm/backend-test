@@ -43,16 +43,4 @@ class Job
      * @type array
      */
     public $cities;
-
-    /**
-     * The string was polluted so I cleaned up to get the state.<br />
-     *
-     * Original format was:<br />
-     * - $CITY - $STATE (1)<br />
-     *
-     * The actual format is the state with 2 letters, like RJ or SC.
-     *
-     * @type string
-     */
-    public $state;
 }
